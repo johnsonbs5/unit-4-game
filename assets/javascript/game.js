@@ -29,7 +29,7 @@ $(document).ready(function() { //Here we are encompassing our main function
       crystalFour = Math.floor(Math.random() * 12) + 1; // creates crystal 4 value, a random number between 1-12
       $("#gameScore").text("Game Score: " + gameScore);
       $("#userScore").text("User Score: " + userScore);
-      console.log(gameScore);
+      console.log(gameScore); //We can remove the console.log to prevent cheating/Industry Standard 
       console.log(crystalOne);
       console.log(crystalTwo);
       console.log(crystalThree);
@@ -39,7 +39,7 @@ $(document).ready(function() { //Here we are encompassing our main function
     //The code below creates a function for our game win
     function winGame() {
       alert("You are the Chosen One Neo... Play again!");
-      winCount = winCount + 1;
+      winCount++;
       $("#winScore").text("Wins: " + winCount);
       resetGame();
     }
@@ -47,14 +47,14 @@ $(document).ready(function() { //Here we are encompassing our main function
     //The code below creates a function for our game loss
     function loseGame() {
       alert("You lose Neo.....Do it again!");
-      lossCount = lossCount + 1;
+      lossCount++;
       $("#lossScore").text("Losses: " + lossCount);
       resetGame();
     }
   
     //on click function for crystalOne
     $("#crystal1").click(function() {
-      userScore = userScore + crystalOne; // This will add value to our score
+      userScore += crystalOne; // This will add value to our score
       console.log("User Score: " + userScore);
       $("#userScore").text("User Score: " + userScore);
         if (userScore === gameScore) {
@@ -66,7 +66,7 @@ $(document).ready(function() { //Here we are encompassing our main function
   
     //on click function for crystalTwo
     $("#crystal2").click(function() {
-      userScore = userScore + crystalTwo; // adds value of crystalTwo to userScore
+      userScore += crystalTwo; // adds value of crystalTwo to userScore
       console.log("User Score: " + userScore);
         $("#userScore").text("User Score: " + userScore);
         if (userScore === gameScore) {
@@ -78,7 +78,7 @@ $(document).ready(function() { //Here we are encompassing our main function
   
     //on click function for crystalThree
     $("#crystal3").click(function() {
-      userScore = userScore + crystalThree; // This ads the value of the user score for crystal 3
+      userScore += crystalThree; // This ads the value of the user score for crystal 3
       console.log("User Score: " + userScore);
         $("#userScore").text("User Score: " + userScore);
         if (userScore === gameScore) {
@@ -90,7 +90,7 @@ $(document).ready(function() { //Here we are encompassing our main function
   
     //on click function for crystalFour
     $("#crystal4").click(function() {
-      userScore = userScore + crystalFour; // adds value of crystalFour to userScore
+      userScore += crystalFour; // adds value of crystalFour to userScore
       console.log("User Score: " + userScore);
       $("#userScore").text("User Score: " + userScore);
         if (userScore === gameScore) {
